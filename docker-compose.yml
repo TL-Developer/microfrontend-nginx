@@ -1,0 +1,33 @@
+version: '3.7'
+services:
+  angular-app:
+    container_name: angular-app
+    build: 
+      context: ./angular
+
+  ember-app:
+    container_name: ember-app
+    build: 
+      context: ./ember-app
+
+  react-app:
+    container_name: react-app
+    build: 
+      context: ./react-app
+
+  vue-app:
+    container_name: vue-app
+    build: 
+      context: ./vue
+
+  orchestrator:
+    container_name: orchestrator-nginx
+    build: 
+      context: .
+    ports:
+      - 80:80
+    depends_on:
+      - angular-app
+      - ember-app
+      - react-app
+      - vue-app
