@@ -8,12 +8,12 @@ services:
   ember-app:
     container_name: ember-app
     build: 
-      context: ./ember-app
+      context: ./ember
 
   react-app:
     container_name: react-app
     build: 
-      context: ./react-app
+      context: ./react
 
   vue-app:
     container_name: vue-app
